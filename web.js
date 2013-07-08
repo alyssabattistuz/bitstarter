@@ -4,9 +4,9 @@ var app = express.createServer(express.logger());
 
 fs = require('fs');
 
-var buffer = fs.readFileSync('index');
+var buffer = fs.readFileSync('bitstarter/index.html');
 
-var message = buffer.toString('utf8', 0, len);
+var message = "here";
 
 app.get('/', function(request, response) {
   response.send(message));
