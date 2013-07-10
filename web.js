@@ -10,7 +10,7 @@ var file = 'index.html';
 
 //var message = 'here';
 
-fs.exists(file, function(exists) {
+/*fs.exists(file, function(exists) {
   if(exists) {
     fs.stat(file, function(error, stats) {
       fs.open(file, 'r', function(error, fd) {
@@ -29,8 +29,12 @@ fs.exists(file, function(exists) {
         });
       });
     }
+});*/
+
+app.get('/', function(request, response) {
+  response.send('Hello world!'));
 });
- 
+
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
   console.log("Listening on " + port);
