@@ -4,11 +4,12 @@ var app = express.createServer(express.logger());
 
 var fs = require('fs');
 
-//var file = 'index.html';
+var file = 'index.html';
+var buffer = new Buffer(8);
+buffer = fs.readFileSync('index.html');
+var data = buffer.toString('utf8', 0, buffer.length);
 
-var buffer = fs.readFileSync('index.html', 'utf-8');
-
-var message = 'here';
+//var message = 'here';
 
 /*fs.exists(file, function(exists) {
   if(exists) {
@@ -32,7 +33,7 @@ var message = 'here';
 });*/
 
 app.get('/', function(request, response) {
-  response.send(message);
+  response.send(data);
 });
 
 var port = process.env.PORT || 5000;
