@@ -2,15 +2,15 @@ var express = require('express');
 
 var app = express.createServer(express.logger());
 
-var fs = require('fs');
+//var fs = require('fs');
 
-var file = 'index.html';
+//var file = 'index.html';
 
 //var buffer = fs.readFileSync('index.html', 'utf-8');
 
-//var message = 'here';
+var message = 'here';
 
-fs.exists(file, function(exists) {
+/*fs.exists(file, function(exists) {
   if(exists) {
     fs.stat(file, function(error, stats) {
       fs.open(file, 'r', function(error, fd) {
@@ -31,9 +31,9 @@ fs.exists(file, function(exists) {
     }
 });*/
 
-//app.get('/', function(request, response) {
-//  response.send('Hello world!');
-//});
+app.get('/', function(request, response) {
+  response.send(message);
+});
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
